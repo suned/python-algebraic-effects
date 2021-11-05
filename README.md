@@ -1,5 +1,5 @@
 # python-algebraic-effects
-Purely Functional, Coroutine based algebraic effects in Python
+Purely Functional, coroutine based algebraic effects in Python
 
 # Example:
 ```python
