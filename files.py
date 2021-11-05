@@ -7,7 +7,8 @@ from effect import Handler
 class ReadFile:
     name: str
 
-class ReadFileHandler(Handler):
-    def handle(self, effect):
+
+class ReadFileHandler(Handler[ReadFile, str]):
+    def handle(self, effect: ReadFile) -> str:
         with open(effect.name) as f:
             return f.read()

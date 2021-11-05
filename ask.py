@@ -1,3 +1,4 @@
+from typing import TypeVar
 from dataclasses import dataclass
 
 from effect import Handler
@@ -8,9 +9,12 @@ class Ask:
     pass
 
 
-class AskHandler(Handler):
-    def __init__(self, value):
+A = TypeVar('A')
+
+
+class AskHandler(Handler[Ask, A]):
+    def __init__(self, value: A):
         self.value = value
 
-    def handle(self, _):
+    def handle(self, _: Ask) -> A:
         return self.value
