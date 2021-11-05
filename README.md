@@ -6,6 +6,7 @@ Purely Functional, Coroutine based algebraic effects in Python
 from ask import Ask, AskHandler
 from files import ReadFile, ReadFileHandler
 from console import Print, PrintHandler
+from effect import run
 
 
 def f():
@@ -21,7 +22,7 @@ def test():
 
 
 handlers = {ReadFile : ReadFileHandler(),
-            Ask      : AskHandler('test.txt'),
+            Ask      : AskHandler('effect.py'),
             Print    : PrintHandler()}
 run(test(), handlers)
 ```
